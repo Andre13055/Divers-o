@@ -22,13 +22,6 @@
             margin-bottom: 20px;
         }
 
-        iframe {
-            border: none;
-            width: 560px;
-            height: 315px;
-            margin-bottom: 20px;
-        }
-
         button {
             background-color: #4CAF50;
             color: white;
@@ -49,40 +42,16 @@
 
     <img src="https://img.elo7.com.br/product/685x685/39D932A/2-adesivo-mostrando-dedo-do-meio-adesivo-dedo-meio-mickey-adesivos-personalizados.jpg" alt="Dedo do Meio">
     
-    <iframe src="https://www.youtube.com/embed/w0RueXsa0s8?autoplay=1" allow="autoplay" title="Paysandu Áudio"></iframe>
-    
-    <button onclick="togglePlay()">Tocar/Pausar Áudio</button>
+    <button onclick="playAudio()">Tocar Áudio</button>
+
+    <!-- Link corrigido para o áudio no GitHub -->
+    <audio id="audio" src="https://github.com/Andre13055/Divers-o/raw/main/paysandu.mp3" preload="auto"></audio>
 
     <script>
-        let iframe = document.querySelector('iframe');
-        let player;
-
-        // Carregar o player do YouTube
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player(iframe, {
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
+        function playAudio() {
+            var audio = document.getElementById("audio");
+            audio.play();
         }
-
-        function onPlayerReady(event) {
-            // Espera o player estar pronto
-        }
-
-        function togglePlay() {
-            if (player && player.getPlayerState() === YT.PlayerState.PLAYING) {
-                player.pauseVideo();
-            } else {
-                player.playVideo();
-            }
-        }
-
-        // Adicionar o script da API do YouTube
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     </script>
 
 </body>
